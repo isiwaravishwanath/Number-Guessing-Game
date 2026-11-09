@@ -1,4 +1,8 @@
+let attempts = 0;
 let randomNumber;
+
+if (attempts == 0) randomNum();
+
 function randomNum() {
     randomNumber = Math.floor(Math.random() * 10 + 1);
     console.log("Random Number : " + randomNumber);
@@ -9,12 +13,10 @@ function again() {
     randomNum();
 }
 
-let attempts = 0;
-if (attempts == 0) randomNum();
 
 function getRandomNumber() {
     attempts++;
-    if (attempts > 3) {
+    if (attempts >= 3) {
         Swal.fire({
             title: "Your attempts are over!",
             text: "You clicked the button!",
@@ -50,7 +52,6 @@ function getRandomNumber() {
 
         document.getElementById("guessInput").value = ""
         console.log("");
-        //lordhistorytable();
     }
     let guess = Number(document.getElementById("guessInput").value);
 }
