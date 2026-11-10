@@ -24,8 +24,6 @@ function getRandomNumber() {
             icon: "error"
         });
         document.getElementById("guessInput").value = "";
-        loadHistory();
-        attempts = 0;
         again();
 
     } else {
@@ -33,9 +31,9 @@ function getRandomNumber() {
         console.log("Your Guess : " + guess);
         console.log("Attempts : " + attempts);
 
-        if (guess > randomNumber) {
+        if (guess > 10 || guess < 1) {
             Swal.fire({
-                text: "Your guessing is greater than the random number",
+                text: "Your guessing is not in between 1 and 10!",
                 icon: "error"
             });
         } else if (guess < randomNumber) {
@@ -43,7 +41,12 @@ function getRandomNumber() {
                 text: "Your guessing is less than the random number",
                 icon: "error"
             });
-        } else {
+        } else if (guess > randomNumber) {
+            Swal.fire({
+                text: "Your guessing is greater than the random number",
+                icon: "error"
+            });
+        } else if(guess==randomNumber) {
             Swal.fire({
                 text: "Correct Guess!",
                 icon: "success"
@@ -71,12 +74,15 @@ function loadHistory() {
 
     for (let data of history) {
         document.getElementById("history").innerHTML = "";
-        document.getElementById("history").innerHTML += `
-            <tr>
-                <th>${data.noOfAttempts}</th>
-                <th>${data.guessNo}</th>
-            </tr>
+        header+= `
+        <tr>
+            <th>${data.noOfAttempts}</th>
+            <th>${data.guessNo}</th>
+        </tr>
         `;
+        document.getElementById("history").innerHTML=header;
     }
+
+    if(attempts==3) attempts = 0;
 
 }
