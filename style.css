@@ -1,11 +1,19 @@
 body {
-    color: black;
+    color: white;
     font-size: 30px;
     background: url("https://images.pexels.com/photos/1329296/pexels-photo-1329296.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    margin: 0;
     /* background-color: rgb(8, 55, 100); */
+}
+
+.div{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.362);
 }
 
 input {

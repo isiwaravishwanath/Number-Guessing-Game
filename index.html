@@ -9,20 +9,21 @@
 </head>
 
 <body>
-    <div></div>
-    <div align="Center">
-        <h1>Number Guessing Game</h1>
-        <h3>Guess a number between 1 and 10</h3>
-        <input type="text" id="guessInput" placeholder="Enter your guess">
-        <button class="btn" id="guessButton" onclick="getRandomNumber()">Guess</button><br><br>
-        <button class="btn" id="againButton" onclick="again()">Again</button><br><br>
-        
-        <table border="1" id="history">
+    <div class="div">
+        <div align="Center">
+            <h1>Number Guessing Game</h1>
+            <h3>Guess a number between 1 and 10</h3>
+            <input type="text" id="guessInput" placeholder="Enter your guess">
+            <button class="btn" id="guessButton" onclick="getRandomNumber()">Guess</button><br><br>
+            <button class="btn" id="againButton" onclick="again()">Again</button><br><br>
             
-        </table>
-
+            <table border="1" id="history">
+                
+            </table>
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="app.js"></script>
 </body>
 
