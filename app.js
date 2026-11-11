@@ -3,6 +3,11 @@ let guess;
 let randomNumber;
 let history = [];
 
+let input=document.getElementById("guessInput");
+input.addEventListener("input",function(){
+    this.value=this.value.replace(/[^0-9]/g,"")
+})
+
 if (attempts == 0) randomNum();
 
 function randomNum() {
